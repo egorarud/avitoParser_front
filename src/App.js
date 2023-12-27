@@ -37,10 +37,10 @@ const App = () => {
 
   return (<div>
     <header>
-        <div className="hero-content">
+        <div className="header-content">
           <h1>Онлайн парсер объявлений</h1>
           <a href="https://www.avito.ru/" className="logo">
-            <img src="/images/avito-logo.png"  alt="Логотип Авито" width="150"/>
+            <img src="/images/avito-logo.png"  alt="Логотип Авито" width="200"/>
           </a>
         </div>
     </header>
@@ -48,11 +48,10 @@ const App = () => {
         <section className='main-content'>
           <div className="content">
             <form action="#" className="form">
-              <label for="url">Ссылка из доски объявлений</label>
-              <input value={text} onChange={(e) => setText(e.target.value)} type="url" id='url' className='url' placeholder="ссылка" required/>
-              </form>
+              <input value={text} onChange={(e) => setText(e.target.value)} type="url" id='url' className='url' placeholder="cсылка из доски объявлений" required/>
               <button onClick={() => fetchTable()} className='filter-button'>Отправить</button>
-            <button className='filter-button' onClick={handleModal}>Фильтры и сортировка</button>
+            </form>
+            {/* <button className='filter-button' onClick={handleModal}>Фильтры и сортировка</button> */}
           </div>
         </section>
       {isVisible ? ( <div className="modal">
@@ -130,9 +129,11 @@ const App = () => {
             </div>
           </div>
         </div>) : <></>}
-       
+      <div className='table'>
         <Table data={data}/>
-      </main></div>
+      </div>
+      </main>
+    </div>
   );
 }
 
