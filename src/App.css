@@ -17,7 +17,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15px 0;
+  padding-top: 40px;
+  padding-bottom: 10px;
 }
 
 main {
@@ -35,6 +36,7 @@ main {
 
 input, button{
   border: none;
+  border-radius: 8px;
 }
 
 h1 {
@@ -64,18 +66,62 @@ h1 {
 }
 
 .table {
-  width: 100%;
-  border: #9DCAF0 solid 2px;
+	border: none;
   font-size: 24px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: left;
 }
 
-td {
-  border: 1px solid grey;
+.table thead th {
+	font-weight: bold;
+	border: none;
+	padding: 10px 15px;
+	background: #9DCAF0;
+	font-size: 14px;
 }
 
-.table-name{
-  width: 166px;
+.table thead tr th:first-child {
+	border-radius: 8px 0 0 8px;
 }
+
+.table thead tr th:last-child {
+	border-radius: 0 8px 8px 0;
+}
+
+.table tbody td {
+	border: none;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;
+}
+
+.table tbody tr:nth-child(even){
+	background: #EFF8FF;
+}
+
+.table tbody tr td:first-child {
+	border-radius: 8px 0 0 8px;
+}
+
+.table tbody tr td:last-child {
+	border-radius: 0 8px 8px 0;
+}
+
+.table a {
+  color: black;
+}
+
+.table-deviation {
+  width: 100px;
+}
+
+.table-deviation, .table-price {
+  text-align: right;
+}
+
+
 
 .filter-button {
   margin-left: 10px;
@@ -106,6 +152,7 @@ td {
   z-index: 1;
   background-color: #EFF8FF;
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  border-radius: 8px;
 }
 
 .modal.hidden {

@@ -8,7 +8,6 @@ const Table = ({ conter }) => {
         <tr className="heading">
           <th className="table-name">Название</th>
           <th className="table-date">Дата публикации</th>
-          <th className="table-url">Ссылка</th>
           <th className="table-price">Цена</th>
           <th className="table-deviation">Отклонение цены от среднего %</th>
           <th className="table-city">Город</th>
@@ -18,9 +17,8 @@ const Table = ({ conter }) => {
         {conter === 1 &&
           data.advertisements.map((t) => (
             <tr>
-              <td className="table-name">{t.title}</td>
-              <td className="table-date">Дата публикации</td>
-              <td className="table-url">{t.url}</td>
+              <td className="table-name"><a href={t.url}>{t.title}</a></td>
+              <td className="table-date">{new Date(t.publicationDate).toLocaleDateString()}</td>
               <td className="table-price">{t.price}</td>
               <td className="table-deviation">{t.priceDeviation}</td>
               <td className="table-city">{t.city}</td>
@@ -29,9 +27,8 @@ const Table = ({ conter }) => {
         {conter === 2 &&
           data2.advertisements.map((t) => (
             <tr>
-              <td className="table-name">{t.title}</td>
-              <td className="table-date">Дата публикации</td>
-              <td className="table-url">{t.url}</td>
+              <td className="table-name"><a href={t.url}>{t.title}</a></td>
+              <td className="table-date">{new Date(t.publicationDate).toLocaleDateString()}</td>
               <td className="table-price">{t.price}</td>
               <td className="table-deviation">{t.priceDeviation}</td>
               <td className="table-city">{t.city}</td>
@@ -40,9 +37,8 @@ const Table = ({ conter }) => {
         {conter === 3 &&
           data3.advertisements.map((t) => (
             <tr>
-              <td className="table-name">{t.title}</td>
-              <td className="table-date">Дата публикации</td>
-              <td className="table-url">{t.url}</td>
+              <td className="table-name"><a href={t.url}>{t.title}</a></td>
+              <td className="table-date">{new Date(t.publicationDate).toLocaleDateString()}</td>
               <td className="table-price">{t.price}</td>
               <td className="table-deviation">{t.priceDeviation}</td>
               <td className="table-city">{t.city}</td>

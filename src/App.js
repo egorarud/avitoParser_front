@@ -73,7 +73,14 @@ const App = () => {
         {isVisible ? (
           <div className="modal">
             <div className="modal-box">
-              <h2>Фильтры</h2>
+              <h2>Как пользоваться парсером объявлений</h2>
+              <ol>
+                <li>Зайдите на сайт avito.ru, введите запрос.</li>
+                <li>Нажимаете кнопку "Найти" и затем скопируйте ссылку из браузера.</li>
+                <li>Вставьте скопированную ссылку в парсер. Нажмите кнопку “Отправить”.</li>
+                <li>По окончании сбора, готовая таблица будет выведена на экран. Также вы сможете скачать ее, нажав кнопку “Скачать”.</li>
+              </ol>
+              {/* <h2>Фильтры</h2>
               <ul className="filters-list">
                 <div className="filters-block">
                   <h3>Обьявления от:</h3>
@@ -184,12 +191,19 @@ const App = () => {
                   Применить
                 </button>
                 <button className="reset-button">Сбросить</button>
-              </div>
+              </div> */}
             </div>
           </div>
         ) : (
           <></>
         )}
+        <select>
+          <option value='default' selected>По умолчанию</option>
+          <option value='price-descending'>Цена: От большего к меньшему</option>
+          <option value='price-increase'>Цена: От меньшего к большему</option>
+          <option value='deviation'>По отклонению от средней стоимости</option>
+          <option value='date'>По дате</option>
+        </select>
         {conter > 0 && (
           <div className="table">
             {isLoading ? <>Загрузка</> : <Table conter={conter} />}
