@@ -197,17 +197,10 @@ const App = () => {
         ) : (
           <></>
         )}
-        <select>
-          <option value='default' selected>По умолчанию</option>
-          <option value='price-descending'>Цена: От большего к меньшему</option>
-          <option value='price-increase'>Цена: От меньшего к большему</option>
-          <option value='deviation'>По отклонению от средней стоимости</option>
-          <option value='date'>По дате</option>
-        </select>
         {conter > 0 && (
-          <div className="table">
-            {isLoading ? <>Загрузка</> : <Table conter={conter} />}
-          </div>
+            <div className="table">
+              {isLoading ? <>Загрузка</> : <Table conter={conter} />}
+            </div>
         )}
       </main>
     </div>

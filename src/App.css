@@ -65,6 +65,22 @@ h1 {
   font-size: 30px;
 }
 
+.table-container {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  margin: 0 auto;
+}
+ 
+select {
+  display: block;
+  width: 200px;
+  background-color: #9DCAF0;
+  border-radius: 8px;
+  height: 30px;
+  align-self: end;
+}
+
 .table {
 	border: none;
   font-size: 24px;
