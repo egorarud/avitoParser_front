@@ -53,8 +53,17 @@ const App = () => {
       <main>
         <section className="main-content">
           <div className="content">
-            <form action="#" className="form">
+            <form
+              action="#"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+              className="form"
+            >
               <input
+                style={{ padding: "0 10px 0 10px" }}
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 type="url"
@@ -63,7 +72,15 @@ const App = () => {
                 placeholder="cсылка из доски объявлений"
                 required
               />
-              <button onClick={() => fetchTable()} className="filter-button">
+              <button
+                style={{
+                  height: 55,
+                  padding: "5px 10px",
+                  backgroundColor: "#97ca3d",
+                }}
+                onClick={() => fetchTable()}
+                className="filter-button"
+              >
                 Отправить
               </button>
             </form>
@@ -76,9 +93,18 @@ const App = () => {
               <h2>Как пользоваться парсером объявлений</h2>
               <ol>
                 <li>Зайдите на сайт avito.ru, введите запрос.</li>
-                <li>Нажимаете кнопку "Найти" и затем скопируйте ссылку из браузера.</li>
-                <li>Вставьте скопированную ссылку в парсер. Нажмите кнопку “Отправить”.</li>
-                <li>По окончании сбора, готовая таблица будет выведена на экран. Также вы сможете скачать ее, нажав кнопку “Скачать”.</li>
+                <li>
+                  Нажимаете кнопку "Найти" и затем скопируйте ссылку из
+                  браузера.
+                </li>
+                <li>
+                  Вставьте скопированную ссылку в парсер. Нажмите кнопку
+                  “Отправить”.
+                </li>
+                <li>
+                  По окончании сбора, готовая таблица будет выведена на экран.
+                  Также вы сможете скачать ее, нажав кнопку “Скачать”.
+                </li>
               </ol>
               {/* <h2>Фильтры</h2>
               <ul className="filters-list">
@@ -198,9 +224,9 @@ const App = () => {
           <></>
         )}
         {conter > 0 && (
-            <div className="table">
-              {isLoading ? <>Загрузка</> : <Table conter={conter} />}
-            </div>
+          <div className="table">
+            {isLoading ? <>Загрузка</> : <Table conter={conter} />}
+          </div>
         )}
       </main>
     </div>
